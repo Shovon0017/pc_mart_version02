@@ -114,7 +114,25 @@ class _ProfileState extends State<Profile> {
               const SizedBox(
                 height: 30,
               ),
-
+              // SizedBox(
+              //   height: 120,
+              //   width: double.infinity,
+              //   child: Card(
+              //     elevation: 5,
+              //     color:  Color(0xff9a0000),
+              //     child: Column(
+              //       children: [
+              //         Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //           children: [
+              //             Text("Orders:5",style: TextStyle(color: Colors.white,fontSize: 25),),
+              //             Text("Received Product:10",style: TextStyle(color: Colors.white,fontSize: 25))
+              //           ],
+              //         )
+              //       ],
+              //     ),
+              //
+              //   ),
+              // ),
               SizedBox(
                 height: 30,
               ),
