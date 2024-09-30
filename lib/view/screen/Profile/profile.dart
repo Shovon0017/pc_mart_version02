@@ -126,7 +126,7 @@ class _ProfileState extends State<Profile> {
                         children: [
                           Container(
                               color: Colors.black,child: Text("Orders:5",style: TextStyle(color: Colors.white,fontSize: 25),)),
-                          Container(child: Text("Received Product:10",style: TextStyle(color: Colors.white,fontSize: 25)))
+                          Container(color: Colors.black,child: Text("Received Product:10",style: TextStyle(color: Colors.white,fontSize: 25)))
                         ],
                       )
                     ],
