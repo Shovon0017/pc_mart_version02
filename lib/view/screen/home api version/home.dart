@@ -20,7 +20,7 @@ class Home extends StatelessWidget {
       backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
         backgroundColor: const Color(0xffFFFFFF),
-        leading: Icon(Icons.menu,size: 25,),
+        leading: Icon(Icons.menu,size: 35,),
         title: SizedBox(
              width: 150, child: Image.asset("images/pcmart.jpg")),
         centerTitle: true,
