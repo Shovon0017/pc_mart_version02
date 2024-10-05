@@ -29,7 +29,7 @@ class AddToCartData {
         "discount_price": 10,
         "sale_price": 79.99,
         "quantity": 20
-      },
+      }
     ]
   };
 }

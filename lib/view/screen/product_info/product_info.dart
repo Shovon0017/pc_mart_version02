@@ -3,9 +3,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pc_shop_version02/Model/add_to_cart_model.dart';
 import 'package:pc_shop_version02/Model/productListModel.dart';
 import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
 import 'package:pc_shop_version02/common%20widget/common_button.dart';
+import 'package:pc_shop_version02/controller/getX%20controller/add_to_cart_controller.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
 import 'package:pc_shop_version02/view/screen/OrderInfo/OrderInfo.dart';
 import 'package:pc_shop_version02/view/screen/notification/notification.dart';
@@ -20,6 +22,7 @@ class ProductInfo extends StatelessWidget {
   Widget build(BuildContext context) {
     ProductInfoController controller = Get.put(ProductInfoController());
     controller.productAmount.value = double.parse(productData.regPrice.toString());
+    AddToCartController addToCartController=Get.put(AddToCartController());
     return Scaffold(backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: const Color(0xffFFFFFF),
@@ -167,7 +170,7 @@ class ProductInfo extends StatelessWidget {
                       buttonWidth:150,
 
                         buttonName: "Add to cart", onTap: ()async{
-                        controller.addToCartProduct(productID: id, qty: 1);
+                      addToCartController.removeFromCart(AddToCartProduct());
 
                         Get.back();
                     })

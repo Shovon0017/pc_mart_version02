@@ -9,7 +9,7 @@ class CommonIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
-      child: const Icon(Icons.notifications_active),
+      child: const Icon(Icons.notifications_active,size: 35),
     );
   }
 }
