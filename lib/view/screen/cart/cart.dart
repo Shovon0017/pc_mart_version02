@@ -80,14 +80,23 @@ class Cart extends StatelessWidget {
                     itemCount: addToCartController.cart.length,
                     itemBuilder: (context, index) {
                       final hostel = addToCartController.cart[index];
-                      return ListTile(
-                        title: Text("${hostel.nameEn}"),
-                        subtitle: Text('${hostel.regPrice} per night'),
-                        trailing: IconButton(
-                          icon: Icon(Icons.delete, color: Colors.red),
-                          onPressed: () {
-                            addToCartController.removeFromCart(hostel);
-                          },
+                      return Card(
+                        elevation: 3,
+                        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                           Column(crossAxisAlignment: CrossAxisAlignment.start,
+                             children: [
+                               Text("Name:${hostel.nameEn}"),
+                               Text('Price:2999 Tk'),
+                             ],
+                           ),
+                            IconButton(
+                              icon: Icon(Icons.delete, color: Colors.red),
+                              onPressed: () {
+                                addToCartController.removeFromCart(hostel);
+                              },
+                            ),
+                          ],
                         ),
                       );
                     },
