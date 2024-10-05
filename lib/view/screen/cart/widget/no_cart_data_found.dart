@@ -14,7 +14,6 @@ class NoCartProductFoundWidget extends StatelessWidget {
     Size size = MediaQuery.sizeOf(context);
     return Center(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: size.height / 6),
@@ -25,11 +24,7 @@ class NoCartProductFoundWidget extends StatelessWidget {
             width: size.width / 1.5,
           ),
           SizedBox(height: size.height / 20),
-          CommonButton(
-              buttonWidth: size.width / 1.5,
-              buttonName: "Add To Cart", onTap: (){
-            Get.offAll(()=> NavigationBarShow());
-          })
+
         ],
       ),
     );

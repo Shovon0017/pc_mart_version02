@@ -37,28 +37,65 @@ class Cart extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(5.0),
-        child: SingleChildScrollView(
-          child:  Obx(() {
-            if (addToCartController.cart.isEmpty) {
-              return Center(child: Text('Your cart is empty!'));
-            }
-            return ListView.builder(
-              itemCount: addToCartController.cart.length,
-              itemBuilder: (context, index) {
-                final product = addToCartController.cart[index];
-                return ListTile(
-                  title: Text("${product.productName}"),
-                  subtitle: Text('${product.salePrice}'),
-                  trailing: IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red),
-                    onPressed: () {
-                      addToCartController.removeFromCart(product);
-                    },
+        child: Obx(
+              () => addToCartController.cart.isEmpty
+              ? const NoCartProductFoundWidget()
+              : Column(
+            children: [
+              const Text(
+                "Shopping Cart",
+                style: TextStyle(
+                    fontSize: 30, fontWeight: FontWeight.bold),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Row(
+                    children: [
+                      RichText(
+                          text: const TextSpan(children: [
+                            TextSpan(
+                                text: "Total Item :",
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold)),
+                          ])),
+                      Obx(
+                            () => Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10),
+                          child: Text(
+                              "${addToCartController.cart.length}"),
+                        ),
+                      ),
+                    ],
                   ),
-                );
-              },
-            );
-          }),
+                ],
+              ),
+              const SizedBox(height: 5),
+              SizedBox(
+                height: size.height / 1.8,
+                child: Obx(() {
+                  return ListView.builder(
+                    itemCount: addToCartController.cart.length,
+                    itemBuilder: (context, index) {
+                      final hostel = addToCartController.cart[index];
+                      return ListTile(
+                        title: Text("${hostel.nameEn}"),
+                        subtitle: Text('${hostel.regPrice} per night'),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete, color: Colors.red),
+                          onPressed: () {
+                            addToCartController.removeFromCart(hostel);
+                          },
+                        ),
+                      );
+                    },
+                  );
+                }),
+              ),
+            ],
+          ),
         ),
       ),
       bottomNavigationBar: Obx(
@@ -67,30 +104,6 @@ class Cart extends StatelessWidget {
             : Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Card(
-                    margin:
-                        const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-                    color: const Color(0xff9a0000),
-                    shape: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(5),
-                        borderSide: BorderSide.none),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          RichText(
-                              text: const TextSpan(children: [
-                            TextSpan(
-                                text: "Total Amount",
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                          ])),
-                          Obx(() => Text("= 5000 Tk",
-                              style: const TextStyle(color: Colors.white))),
-                        ],
-                      ),
-                    ),
-                  ),
                   CommonButton(
                     buttonWidth: size.width / 2,
                     buttonName: "Check Out",

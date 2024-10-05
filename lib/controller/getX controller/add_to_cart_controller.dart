@@ -2,8 +2,10 @@
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:pc_shop_version02/Model/add_to_cart_model.dart';
+import 'package:pc_shop_version02/Model/productInfoModel.dart';
+import 'package:pc_shop_version02/Model/productListModel.dart';
 class AddToCartController extends GetxController {
-  var cart = <AddToCartProduct>[].obs;
+  var cart = <Products>[].obs;
   final GetStorage storage = GetStorage();
 
   @override
@@ -12,16 +14,16 @@ class AddToCartController extends GetxController {
     _loadCart();
   }
 
-  void addToCart(AddToCartProduct product) {
+  void addToCart(Products product) {
     cart.add(product);
     _saveCart();
-    Get.snackbar('Success', '${product.productName} added to cart!');
+    Get.snackbar('Success', '${product.nameEn} added to cart!');
   }
 
-  void removeFromCart(AddToCartProduct product) {
+  void removeFromCart(Products product) {
     cart.remove(product);
     _saveCart();
-    Get.snackbar('Removed', '${product.productName} removed from cart!');
+    Get.snackbar('Removed', '${product.nameEn} removed from cart!');
   }
 
   void _saveCart() {
@@ -30,6 +32,6 @@ class AddToCartController extends GetxController {
 
   void _loadCart() {
     var savedCart = storage.read('cart') ?? [];
-    cart.value = List<AddToCartProduct>.from(savedCart.map((item) => AddToCartProduct.fromJson(item)));
+    cart.value = List<Products>.from(savedCart.map((item) => Products.fromJson(item)));
   }
 }

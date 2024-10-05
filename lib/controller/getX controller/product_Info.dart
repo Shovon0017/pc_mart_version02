@@ -34,8 +34,4 @@ class ProductInfoController extends GetxController {
       detailsData.addAll(data);
     }
   }
-
-  addToCartProduct({required int productID, required int qty}) async {
-    Get.back();
-  }
 }
