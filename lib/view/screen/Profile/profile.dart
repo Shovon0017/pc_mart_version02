@@ -125,7 +125,7 @@ class _ProfileState extends State<Profile> {
                       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Container(
-                              child: Text("Orders:5",style: TextStyle(color: Colors.white,fontSize: 25),)),
+                              child: Text("All Orders:5",style: TextStyle(color: Colors.white,fontSize: 25),)),
                           Container(child: Text("Received Product:10",style: TextStyle(color: Colors.white,fontSize: 25)))
                         ],
                       )
