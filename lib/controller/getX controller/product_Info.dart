@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
+import 'package:pc_shop_version02/Model/productListModel.dart';
 import 'package:pc_shop_version02/controller/api%20service/product_description.dart';
 
 class ProductInfoController extends GetxController {
@@ -11,10 +13,12 @@ class ProductInfoController extends GetxController {
   String id = "0";
   RxDouble productAmount = 0.00.obs;
   RxBool isLoading = false.obs;
-
+  RxList<Products> cart = <Products>[].obs;
+  final GetStorage storage = GetStorage();
   @override
   void onInit() {
     ProductInfoFun();
+    _loadCart();
     super.onInit();
   }
 
@@ -33,5 +37,28 @@ class ProductInfoController extends GetxController {
       };
       detailsData.addAll(data);
     }
+  }
+
+
+
+  void addToCart(Products product) {
+    cart.add(product);
+    _saveCart();
+    Get.snackbar('Success', '${product.nameEn} added to cart!');
+  }
+
+  void removeFromCart(Products product) {
+    cart.remove(product);
+    _saveCart();
+    Get.snackbar('Removed', '${product.nameEn} removed from cart!');
+  }
+
+  void _saveCart() {
+    storage.write('cart', cart.map((product) => product.toJson()).toList());
+  }
+
+  void _loadCart() {
+    var savedCart = storage.read('cart') ?? [];
+    cart.value = List<Products>.from(savedCart.map((item) => Products.fromJson(item)));
   }
 }

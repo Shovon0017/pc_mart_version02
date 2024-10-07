@@ -7,6 +7,7 @@ import 'package:pc_shop_version02/common%20widget/common_button.dart';
 import 'package:pc_shop_version02/common%20widget/custom_order_shimmer_loading.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/add_to_cart_controller.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/cart.dart';
+import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
 import 'package:pc_shop_version02/view/screen/OrderInfo/OrderInfo.dart';
 import 'package:pc_shop_version02/view/screen/cart/widget/increment_decrement.dart';
 import 'package:pc_shop_version02/view/screen/cart/widget/no_cart_data_found.dart';
@@ -17,7 +18,7 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    AddToCartController addToCartController=Get.put(AddToCartController());
+    ProductInfoController addToCartController=Get.put(ProductInfoController());
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
@@ -84,6 +85,10 @@ class Cart extends StatelessWidget {
                         elevation: 3,
                         child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
+                            SizedBox(
+                                height: 80,
+                                width: 80
+                                ,child: Image.asset("${hostel.image}")),
                            Column(crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
                                Text("Name:${hostel.nameEn}"),
