@@ -111,7 +111,9 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              const SizedBox(
+              CommonButton(buttonName:"Update Profile", onTap: (){
+
+              }),SizedBox(
                 height: 30,
               ),
               SizedBox(
