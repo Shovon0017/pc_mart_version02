@@ -1,6 +1,9 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
+import 'package:pc_shop_version02/view/screen/notification/notification.dart';
 
 class UpdatePage extends StatelessWidget {
   const UpdatePage({super.key});
