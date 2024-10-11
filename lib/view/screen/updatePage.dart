@@ -27,7 +27,13 @@ class UpdatePage extends StatelessWidget {
           )
         ],
       ),
-      body: ,
+      body:Center(
+        child: Column(
+          children: [
+
+          ],
+        ),
+      ) ,
     );
   }
 }
