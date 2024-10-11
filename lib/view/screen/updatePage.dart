@@ -10,7 +10,7 @@ class UpdatePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(backgroundColor: const Color(0xffFFFFFF),
       appBar: AppBar(
         backgroundColor: const Color(0xffFFFFFF),
         title: SizedBox(
@@ -27,6 +27,7 @@ class UpdatePage extends StatelessWidget {
           )
         ],
       ),
+      body: ,
     );
   }
 }
