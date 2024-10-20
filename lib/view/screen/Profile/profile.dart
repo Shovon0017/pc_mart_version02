@@ -10,7 +10,6 @@ import 'package:pc_shop_version02/view/screen/notification/notification.dart';
 import 'package:pc_shop_version02/view/screen/requested_order/requested_order.dart';
 import 'package:pc_shop_version02/view/screen/setting/setting.dart';
 import 'package:pc_shop_version02/view/screen/support/support.dart';
-import 'package:pc_shop_version02/view/screen/updatePage.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -112,31 +111,10 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              CommonButton(buttonName:"Update Profile", onTap: (){
-                Get.to(()=>UpdatePage());
-              }),SizedBox(
+              SizedBox(
                 height: 30,
               ),
-              SizedBox(
-                height: 120,
-                width: double.infinity,
-                child: Card(
-                  elevation: 5,
-                  color: Color(0xff9a0000),
-                  child: Column(
-                    children: [
-                      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Container(
-                              child: Text("All Orders:5",style: TextStyle(color: Colors.white,fontSize: 25),)),
-                          Container(child: Text("Received Product:10",style: TextStyle(color: Colors.white,fontSize: 25)))
-                        ],
-                      )
-                    ],
-                  ),
 
-                ),
-              ),
               SizedBox(
                 height: 30,
               ),
