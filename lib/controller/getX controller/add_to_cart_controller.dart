@@ -17,7 +17,7 @@ class AddToCartController extends GetxController {
   void addToCart(Products product) {
     cart.add(product);
     _saveCart();
-
+    Get.snackbar('Success', '${product.nameEn} added to cart!');
   }
 
   void removeFromCart(Products product) {
