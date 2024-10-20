@@ -102,7 +102,7 @@ class _ProfileState extends State<Profile> {
                           RichText(text: const TextSpan(
                               children: [
                                 TextSpan(text: "Address:",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white)),
-                                TextSpan(text: "Sector-12,Uttara,Dhaka",style: TextStyle(color: Colors.white,fontSize: 15))
+                                TextSpan(text: "Bheramara,Kushtia",style: TextStyle(color: Colors.white,fontSize: 15))
                               ]
                           ))
                         ],
