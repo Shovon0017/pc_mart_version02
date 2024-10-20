@@ -91,7 +91,7 @@ class Cart extends StatelessWidget {
                                 ,child: Image.asset("${hostel.image}")),
                            Column(crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
-                               Text("Name:${hostel.nameEn}"),
+                               Text("Name:${hostel.nameEn}",style: TextStyle(overflow:TextOverflow.ellipsis),),
                                Text('Price:2999 Tk'),
                              ],
                            ),
