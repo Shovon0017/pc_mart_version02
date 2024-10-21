@@ -229,7 +229,7 @@ class Cart extends StatelessWidget {
                 Get.to(() =>  OrderInfo());
               }, buttonName: "checkout",
             ),
-            const SizedBox(height: 70)
+            const SizedBox(height: 170)
           ],
         ),
       ),
