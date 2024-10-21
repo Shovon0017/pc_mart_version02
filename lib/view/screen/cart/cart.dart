@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
 import 'package:pc_shop_version02/common%20widget/common_button.dart';
 import 'package:pc_shop_version02/common%20widget/custom_order_shimmer_loading.dart';
-import 'package:pc_shop_version02/controller/getX%20controller/add_to_cart_controller.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
 import 'package:pc_shop_version02/view/screen/OrderInfo/OrderInfo.dart';
 import 'package:pc_shop_version02/view/screen/cart/widget/increment_decrement.dart';
