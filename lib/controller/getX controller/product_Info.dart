@@ -17,7 +17,6 @@ class ProductInfoController extends GetxController {
   final GetStorage storage = GetStorage();
   @override
   void onInit() {
-    ProductInfoFun();
     _loadCart();
     super.onInit();
   }

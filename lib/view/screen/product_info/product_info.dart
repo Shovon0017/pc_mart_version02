@@ -14,7 +14,6 @@ import 'package:pc_shop_version02/view/screen/notification/notification.dart';
 
 
 class ProductInfo extends StatelessWidget {
-  AddToCartController addToCartController=Get.put(AddToCartController());
    ProductInfo({super.key, required this.id, required this.productData});
   final int id;
   var value=-1;
@@ -170,7 +169,7 @@ class ProductInfo extends StatelessWidget {
                     CommonButton(
                       buttonWidth:150,
                         buttonName: "Add to cart", onTap: ()async{
-                      addToCartController.addToCart(Products(nameEn: productData.nameEn));
+                      controller.addToCart(Products(nameEn: productData.nameEn));
                     })
                   ],
                 )

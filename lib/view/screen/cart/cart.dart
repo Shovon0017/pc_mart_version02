@@ -6,7 +6,6 @@ import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
 import 'package:pc_shop_version02/common%20widget/common_button.dart';
 import 'package:pc_shop_version02/common%20widget/custom_order_shimmer_loading.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/add_to_cart_controller.dart';
-import 'package:pc_shop_version02/controller/getX%20controller/cart.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
 import 'package:pc_shop_version02/view/screen/OrderInfo/OrderInfo.dart';
 import 'package:pc_shop_version02/view/screen/cart/widget/increment_decrement.dart';
@@ -18,7 +17,7 @@ class Cart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ProductInfoController addToCartController=Get.put(ProductInfoController());
+    ProductInfoController cartController=Get.put(ProductInfoController());
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
       backgroundColor: const Color(0xffFFFFFF),
@@ -38,96 +37,201 @@ class Cart extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(5.0),
-        child: Obx(
-              () => addToCartController.cart.isEmpty
-              ? const NoCartProductFoundWidget()
-              : Column(
-            children: [
-              const Text(
-                "Shopping Cart",
-                style: TextStyle(
-                    fontSize: 30, fontWeight: FontWeight.bold),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Row(
-                    children: [
-                      RichText(
-                          text: const TextSpan(children: [
-                            TextSpan(
-                                text: "Total Item :",
-                                style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold)),
-                          ])),
-                      Obx(
-                            () => Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10),
-                          child: Text(
-                              "${addToCartController.cart.length}"),
+        child: SingleChildScrollView(
+          child: Obx(
+                () => cartController.isLoading.isTrue
+                ? const CustomOrderShimmer()
+                : cartController.cart.isEmpty
+                ? const NoCartProductFoundWidget()
+                : Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Row(
+                      children: [
+                        RichText(
+                            text: const TextSpan(children: [
+                              TextSpan(
+                                  text: "Total Item :",
+                                  style: TextStyle(
+                                      color: Colors.black,
+                                      fontWeight: FontWeight.bold)),
+                            ])),
+                        Obx(
+                              () => Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 10),
+                            child: Text(
+                                "${cartController.cart.length}"),
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              const SizedBox(height: 5),
-              SizedBox(
-                height: size.height / 1.8,
-                child: Obx(() {
-                  return ListView.builder(
-                    itemCount: addToCartController.cart.length,
-                    itemBuilder: (context, index) {
-                      final hostel = addToCartController.cart[index];
-                      return Card(
-                        elevation: 3,
-                        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            SizedBox(
-                                height: 80,
-                                width: 80
-                                ,child: Image.asset("${hostel.image}")),
-                           Column(crossAxisAlignment: CrossAxisAlignment.start,
-                             children: [
-                               Text("Name:${hostel.nameEn}",style: TextStyle(overflow:TextOverflow.ellipsis),),
-                               Text('Price:2999 Tk'),
-                             ],
-                           ),
-                            IconButton(
-                              icon: Icon(Icons.delete, color: Colors.red),
-                              onPressed: () {
-                                addToCartController.removeFromCart(hostel);
-                              },
+                      ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 5),
+                SizedBox(
+                  height: size.height / 1.8,
+                  child: Obx(
+                        () => ListView.builder(
+                        padding: const EdgeInsets.only(bottom: 10),
+                        shrinkWrap: true,
+                        itemCount: cartController.cart.length,
+                        itemBuilder: (_, index) {
+                          var data = cartController.cart[index];
+                          double salePrice = 0.0;
+                          if (data.disPrice != 0) {
+                            if (data.disType == 0) {
+                              salePrice = (data.regPrice! - double.parse(data.disPrice.toString()));
+                            } else if (data.disType == 1) {
+                              salePrice = (data.regPrice! - (double.parse(data.disPrice.toString()) / 100) * data.regPrice!);
+                            } else {
+                              salePrice = 0.00;
+                            }
+                          } else {
+                            salePrice = double.parse(data.regPrice.toString());
+                          }
+                          return Card(
+                            margin: const EdgeInsets.symmetric(vertical: 5),
+                            surfaceTintColor: Colors.transparent,
+                            shape: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.grey.withOpacity(.3), strokeAlign: BorderSide.strokeAlignOutside),
                             ),
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                }),
-              ),
-            ],
+                            child: Row(
+                              children: [
+
+                                Expanded(
+                                  flex: 5,
+                                  child: Padding(
+                                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Text(
+                                          "${cartController.cart[index].nameEn}",style: TextStyle(fontSize: 15,overflow: TextOverflow.ellipsis),),
+                                        Row(
+                                          children: [
+                                            Text(
+                                              "Price : ",style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+                                            ),
+                                            Text(
+                                              "$salePrice ৳",style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+
+                                            ),
+                                          ],
+                                        ),
+                                        Row(
+                                          children: [
+                                            Obx(()=> Text(
+                                              "${cartController.productQty.value * salePrice} ৳",style: TextStyle(
+                                              fontSize: 16,
+                                              color: Colors.red,
+                                            ),
+
+                                            ),),
+                                            const Spacer(),
+                                            InkWell(
+                                              onTap: () async {
+                                                cartController.cart.removeAt(index);
+                                              },
+                                              child: const Icon(Icons.delete_forever, color: Colors.red),
+                                            ),
+                                            const SizedBox(width: 10)
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                  flex: 1,
+                                  child: Column(
+                                    children: [
+                                      IncrementDecrementButton(
+                                          iconData: Icons.add,
+                                          onTap: () async {
+                                            cartController.productQty.value ++;
+                                          }),
+                                      Obx(
+                                            () => Text(
+                                          "${cartController.productQty.value}",style: TextStyle(
+                                          fontSize: 15,
+                                          color: Colors.black,
+                                        ),
+
+                                        ),
+                                      ),
+                                      IncrementDecrementButton(
+                                          iconData: Icons.remove,
+                                          onTap: () async {
+                                            if (cartController.productQty.value > 1) {
+                                              cartController.productQty.value --;
+                                            } else {
+                                              await EasyLoading.showError("Minimum quantity should be 1");
+                                            }
+                                          }),
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        }),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
       bottomNavigationBar: Obx(
-        () => addToCartController.cart.isEmpty
+            () => cartController.cart.isEmpty
             ? const SizedBox()
             : Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  CommonButton(
-                    buttonWidth: size.width / 2,
-                    buttonName: "Check Out",
-                    onTap: () async {
-                      Get.to(() => const OrderInfo());
-                    },
-                  ),
-                  const SizedBox(height: 150)
-                ],
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Card(
+              margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
+              color: const Color(0xffFFEDE5),
+              shape: OutlineInputBorder(borderRadius: BorderRadius.circular(5), borderSide: BorderSide.none),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "total_amount".tr,style: TextStyle(
+                      fontSize: 18,
+
+                    ),
+
+                    ),
+                    Obx(
+                          () => Text(
+                        "= ${cartController.productAmount.obs} ৳",style: TextStyle(
+                        fontSize: 18,
+                      ),
+
+                      ),
+                    ),
+                  ],
+                ),
               ),
+            ),
+            CommonButton(
+              onTap: () async {
+                Get.to(() =>  OrderInfo());
+              }, buttonName: "checkout",
+            ),
+            const SizedBox(height: 70)
+          ],
+        ),
       ),
     );
   }
