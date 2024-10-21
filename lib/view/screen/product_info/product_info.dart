@@ -169,7 +169,7 @@ class ProductInfo extends StatelessWidget {
                     CommonButton(
                       buttonWidth:150,
                         buttonName: "Add to cart", onTap: ()async{
-                      controller.addToCart(Products(nameEn: productData.nameEn));
+                      controller.addToCart(Products(nameEn: productData.nameEn,regPrice: productData.regPrice,image: productData.image));
                     })
                   ],
                 )

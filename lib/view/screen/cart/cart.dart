@@ -79,19 +79,6 @@ class Cart extends StatelessWidget {
                         shrinkWrap: true,
                         itemCount: cartController.cart.length,
                         itemBuilder: (_, index) {
-                          var data = cartController.cart[index];
-                          double salePrice = 0.0;
-                          if (data.disPrice != 0) {
-                            if (data.disType == 0) {
-                              salePrice = (data.regPrice! - double.parse(data.disPrice.toString()));
-                            } else if (data.disType == 1) {
-                              salePrice = (data.regPrice! - (double.parse(data.disPrice.toString()) / 100) * data.regPrice!);
-                            } else {
-                              salePrice = 0.00;
-                            }
-                          } else {
-                            salePrice = double.parse(data.regPrice.toString());
-                          }
                           return Card(
                             margin: const EdgeInsets.symmetric(vertical: 5),
                             surfaceTintColor: Colors.transparent,
@@ -100,6 +87,9 @@ class Cart extends StatelessWidget {
                             ),
                             child: Row(
                               children: [
+                                SizedBox(
+                                    height: 80,
+                                    width:80,child: Image.asset("${cartController.cart[index].image}")),
 
                                 Expanded(
                                   flex: 5,
@@ -119,7 +109,7 @@ class Cart extends StatelessWidget {
                                             ),
                                             ),
                                             Text(
-                                              "$salePrice ৳",style: TextStyle(
+                                              "${cartController.cart[index].regPrice} ৳",style: TextStyle(
                                               fontSize: 12,
                                             ),
 
@@ -128,13 +118,13 @@ class Cart extends StatelessWidget {
                                         ),
                                         Row(
                                           children: [
-                                            Obx(()=> Text(
-                                              "${cartController.productQty.value * salePrice} ৳",style: TextStyle(
-                                              fontSize: 16,
-                                              color: Colors.red,
-                                            ),
-
-                                            ),),
+                                            // Obx(()=> Text(
+                                            //   "${cartController.productQty.value * salePrice} ৳",style: TextStyle(
+                                            //   fontSize: 16,
+                                            //   color: Colors.red,
+                                            // ),
+                                            //
+                                            // ),),
                                             const Spacer(),
                                             InkWell(
                                               onTap: () async {
