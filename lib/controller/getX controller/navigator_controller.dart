@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pc_shop_version02/view/screen/Profile/profile.dart';
 import 'package:pc_shop_version02/view/screen/cart/cart.dart';
+import 'package:pc_shop_version02/view/screen/cart/cart_2.dart';
 import 'package:pc_shop_version02/view/screen/home%20api%20version/home.dart';
 class BottomNavBarController extends GetxController {
   final pageController = PageController(initialPage: 0);
@@ -14,7 +15,7 @@ class BottomNavBarController extends GetxController {
 
   List<Widget> bottomBarPages = [
     const Home(),
-    const Cart(),
+    const CartScreen(),
     const Profile()
   ];
   @override
