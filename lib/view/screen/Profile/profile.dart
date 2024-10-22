@@ -68,7 +68,7 @@ class _ProfileState extends State<Profile> {
                           const Text(
                             "Name:Md Shimanto Mostofa",
                             style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
+                                overflow: TextOverflow.ellipsis,
                                 fontSize: 20,
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold),
@@ -83,8 +83,8 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.white)),
                             TextSpan(
                                 text: "Shovon@gmail.com",
-                                style:
-                                    TextStyle(color: Colors.white, fontSize: 15))
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15))
                           ])),
                           RichText(
                               text: const TextSpan(children: [
@@ -96,15 +96,22 @@ class _ProfileState extends State<Profile> {
                                     color: Colors.white)),
                             TextSpan(
                                 text: "01643770017",
-                                style:
-                                    TextStyle(color: Colors.white, fontSize: 15))
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15))
                           ])),
-                          RichText(text: const TextSpan(
-                              children: [
-                                TextSpan(text: "Address:",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold,color: Colors.white)),
-                                TextSpan(text: "Bheramara,Kushtia",style: TextStyle(color: Colors.white,fontSize: 15))
-                              ]
-                          ))
+                          RichText(
+                              text: const TextSpan(children: [
+                            TextSpan(
+                                text: "Address:",
+                                style: TextStyle(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white)),
+                            TextSpan(
+                                text: "Bheramara,Kushtia",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 15))
+                          ]))
                         ],
                       )
                     ],
@@ -112,30 +119,38 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 20,
               ),
-
-              SizedBox(
-                height: 30,
-              ),
-              CommonButton(buttonName: "Requested Order", onTap: () {
-                Get.to(()=>const Order());
-              }),
-              CommonButton(buttonName: "Confirm Order", onTap: () {
-                Get.to(()=>const ConfirmOrder());
-              }),
-              CommonButton(buttonName: "Order Report", onTap: () {
-                Get.to(()=>const OrderReport());
-              }),
-              CommonButton(buttonName: "Setting", onTap: () {
-                Get.to(()=>const Setting());
-              }),
-              CommonButton(buttonName: "Support", onTap: () {
-                Get.to(()=>const Support());
-              }),
-              CommonButton(buttonName: "FAQ", onTap: () {
-                Get.to(()=>const FAQ());
-              }),
+              CommonButton(
+                  buttonName: "Requested Order",
+                  onTap: () {
+                    Get.to(() => const Order());
+                  }),
+              CommonButton(
+                  buttonName: "Confirm Order",
+                  onTap: () {
+                    Get.to(() => const ConfirmOrder());
+                  }),
+              CommonButton(
+                  buttonName: "Order Report",
+                  onTap: () {
+                    Get.to(() => const OrderReport());
+                  }),
+              CommonButton(
+                  buttonName: "Setting",
+                  onTap: () {
+                    Get.to(() => const Setting());
+                  }),
+              CommonButton(
+                  buttonName: "Support",
+                  onTap: () {
+                    Get.to(() => const Support());
+                  }),
+              CommonButton(
+                  buttonName: "FAQ",
+                  onTap: () {
+                    Get.to(() => const FAQ());
+                  }),
               CommonButton(
                   buttonName: "LogOut",
                   onTap: () {
