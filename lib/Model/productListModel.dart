@@ -33,6 +33,7 @@ class Products {
   String? disPrice;
   String? brand;
   int? stock;
+  int? quantity;
   String? rating;
 
   Products(
@@ -47,6 +48,7 @@ class Products {
         this.disPrice,
         this.brand,
         this.stock,
+        this.quantity,
         this.rating});
 
   Products.fromJson(Map<String, dynamic> json) {
@@ -61,6 +63,7 @@ class Products {
     disPrice = json['dis_price'];
     brand = json['brand'];
     stock = json['stock'];
+    quantity=json['quantity'];
     rating = json['rating'];
   }
 
@@ -77,6 +80,7 @@ class Products {
     data['dis_price'] = disPrice;
     data['brand'] = brand;
     data['stock'] = stock;
+    data['quantity'] = quantity;
     data['rating'] = rating;
     return data;
   }
