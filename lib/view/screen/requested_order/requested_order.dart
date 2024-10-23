@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
@@ -49,11 +50,19 @@ class _OrderState extends State<Order> {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 100,
               width: double.infinity,
               child:
               Card(
-                color: Color(0xff9a0000),
+                color: CupertinoColors.systemGrey4,
+              ),
+            ),
+            SizedBox(
+              height: 100,
+              width: double.infinity,
+              child:
+              Card(
+                color: CupertinoColors.systemGrey4,
               ),
             ),
             SizedBox(
@@ -61,15 +70,7 @@ class _OrderState extends State<Order> {
               width: double.infinity,
               child:
               Card(
-                color: Color(0xff9a0000),
-              ),
-            ),
-            SizedBox(
-              height: 200,
-              width: double.infinity,
-              child:
-              Card(
-                color: Color(0xff9a0000),
+                color: CupertinoColors.systemGrey4,
               ),
             )
           ],
