@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
+import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
 import 'package:pc_shop_version02/view/screen/notification/notification.dart';
 
 class Order extends StatefulWidget {
@@ -13,6 +14,7 @@ class Order extends StatefulWidget {
 class _OrderState extends State<Order> {
   @override
   Widget build(BuildContext context) {
+    ProductInfoController controller=Get.put(ProductInfoController());
     return Scaffold(backgroundColor: const Color(0xffFFFFFF),
 
       appBar: AppBar(
@@ -31,14 +33,47 @@ class _OrderState extends State<Order> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          const Text("Requested Order",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-          const SizedBox(
-            height: 100,
-          ),
-          Image.asset("images/no-product-found.png"),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const Text("Requested Order",style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+             SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 200,
+              width: double.infinity,
+              child:
+              Card(
+                color: Color(0xff9a0000),
+              ),
+            ),
+            SizedBox(
+              height: 200,
+              width: double.infinity,
+              child:
+              Card(
+                color: Color(0xff9a0000),
+              ),
+            ),
+            SizedBox(
+              height: 200,
+              width: double.infinity,
+              child:
+              Card(
+                color: Color(0xff9a0000),
+              ),
+            ),
+            SizedBox(
+              height: 200,
+              width: double.infinity,
+              child:
+              Card(
+                color: Color(0xff9a0000),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
