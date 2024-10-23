@@ -47,6 +47,14 @@ class _OrderState extends State<Order> {
               child:
               Card(
                 color: Color(0xff9a0000),
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("On The Way To China!",style: TextStyle(fontSize: 20,color: Colors.white),),
+                    Text("Estimated Delivery Date Is",style: TextStyle(fontSize: 20,color: Colors.white),),
+                    Text("23 October - 29 October",style: TextStyle(fontSize: 20,color: Colors.white)),
+                    Text("data")
+                  ],
+                ),
               ),
             ),
             SizedBox(
