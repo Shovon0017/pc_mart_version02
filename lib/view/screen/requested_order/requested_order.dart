@@ -49,20 +49,48 @@ class _OrderState extends State<Order> {
                 color: Color(0xff9a0000),
                 child: Column(mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("On The Way To China!",style: TextStyle(fontSize: 20,color: Colors.white),),
-                    Text("Estimated Delivery Date Is",style: TextStyle(fontSize: 20,color: Colors.white),),
-                    Text("23 October - 29 October",style: TextStyle(fontSize: 20,color: Colors.white)),
-                    Text("data")
+                    Text("On The Way To China!",style: TextStyle(fontSize: 30,color: Colors.white),),
+                    Text("Estimated Delivery Date Is",style: TextStyle(fontSize: 30,color: Colors.white),),
+                    Text("23 October - 29 October",style: TextStyle(fontSize: 30,color: Colors.white)),
                   ],
                 ),
               ),
             ),
             SizedBox(
-              height: 100,
+             height: 80,
               width: double.infinity,
               child:
               Card(
                 color: CupertinoColors.systemGrey4,
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                        text: const TextSpan(children: [
+                          TextSpan(
+                              text: "Delivery Partner :",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          TextSpan(
+                              text: "BD-DEX",
+                              style: TextStyle(fontSize: 20, color: Colors.black))
+                        ])),
+                    RichText(
+                        text: const TextSpan(children: [
+                          TextSpan(
+                              text: "Tracking Number:",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          TextSpan(
+                              text: "DEX-BND-00000981234",
+                              style: TextStyle(fontSize: 20, color: Color(0xff9a0000)))
+                        ])),
+
+                  ],
+                ),
               ),
             ),
             SizedBox(
