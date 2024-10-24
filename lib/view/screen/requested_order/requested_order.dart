@@ -94,11 +94,39 @@ class _OrderState extends State<Order> {
               ),
             ),
             SizedBox(
-              height: 100,
+              height: 80,
               width: double.infinity,
               child:
               Card(
                 color: CupertinoColors.systemGrey4,
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RichText(
+                        text: const TextSpan(children: [
+                          TextSpan(
+                              text: "Receiver Name:",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          TextSpan(
+                              text: "User-001",
+                              style: TextStyle(fontSize: 20, color: Colors.black))
+                        ])),
+                    RichText(
+                        text: const TextSpan(children: [
+                          TextSpan(
+                              text: "Address:",
+                              style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black)),
+                          TextSpan(
+                              text: "House 09,Road 5,Bheramara,Kushtia",
+                              style: TextStyle(fontSize: 20, color: Colors.black,overflow: TextOverflow.ellipsis))
+                        ])),
+                  ],
+                ),
               ),
             ),
             SizedBox(
