@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(debugShowCheckedModeBanner: false,
-      home: Order(),
+      home: NavigationBarShow(),
         builder: EasyLoading.init(),
     );
   }

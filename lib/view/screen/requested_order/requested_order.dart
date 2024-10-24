@@ -2,7 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pc_shop_version02/common%20widget/CommonIcon.dart';
+import 'package:pc_shop_version02/common%20widget/common_button.dart';
 import 'package:pc_shop_version02/controller/getX%20controller/product_Info.dart';
+import 'package:pc_shop_version02/view/screen/navigation%20bar/navigation.dart';
 import 'package:pc_shop_version02/view/screen/notification/notification.dart';
 
 class Order extends StatefulWidget {
@@ -130,7 +132,7 @@ class _OrderState extends State<Order> {
               ),
             ),
             SizedBox(
-              height: 200,
+              height: 300,
               width: double.infinity,
               child:
               Card(
@@ -162,17 +164,17 @@ class _OrderState extends State<Order> {
                                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        "${controller.cart[index].nameEn}",style: TextStyle(fontSize: 15,overflow: TextOverflow.ellipsis),),
+                                        "${controller.cart[index].nameEn}",style: TextStyle(fontSize: 20,overflow: TextOverflow.ellipsis),),
                                       Row(
                                         children: [
                                           Text(
                                             "Price : ",style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 20,
                                           ),
                                           ),
                                           Text(
                                             "${controller.cart[index].regPrice} ৳",style: TextStyle(
-                                            fontSize: 12,
+                                            fontSize: 20,
                                           ),
 
                                           ),
@@ -180,19 +182,18 @@ class _OrderState extends State<Order> {
                                       ),
                                       Row(
                                         children: [
-                                          // Obx(()=> Text(
-                                          //   "${cartController.productQty.value * salePrice} ৳",style: TextStyle(
-                                          //   fontSize: 16,
-                                          //   color: Colors.red,
-                                          // ),
-                                          //
-                                          // ),),
-                                          const Spacer(),
+                                          Spacer(),
                                           InkWell(
                                             onTap: () async {
                                               controller.cart.removeAt(index);
                                             },
-                                            child: const Icon(Icons.delete_forever, color: Colors.red),
+                                            child: InkWell(onTap: (){
+                                              Get.offAll(()=>NavigationBarShow());
+                                            },
+                                              child: CommonButton(buttonName: "Buy Again",buttonColor: Color(0xff9a0000),textColor: Colors.white,buttonHeight: 25,buttonWidth: 120, onTap:(){
+                                                Get.offAll(()=>NavigationBarShow());
+                                              })
+                                            ),
                                           ),
                                           const SizedBox(width: 10)
                                         ],
