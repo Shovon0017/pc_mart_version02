@@ -42,7 +42,7 @@ class _OrderState extends State<Order> {
               height: 20,
             ),
             SizedBox(
-              height: 200,
+              height: 180,
               width: double.infinity,
               child:
               Card(
@@ -135,6 +135,77 @@ class _OrderState extends State<Order> {
               child:
               Card(
                 color: CupertinoColors.systemGrey4,
+                child: Obx(
+                      () => ListView.builder(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      shrinkWrap: true,
+                      itemCount: controller.cart.length,
+                      itemBuilder: (_, index) {
+                        return Card(
+                          margin: const EdgeInsets.symmetric(vertical: 5),
+                          surfaceTintColor: Colors.transparent,
+                          shape: OutlineInputBorder(
+                            borderSide: BorderSide(color: Colors.grey.withOpacity(.3), strokeAlign: BorderSide.strokeAlignOutside),
+                          ),
+                          child: Row(
+                            children: [
+                              SizedBox(
+                                  height: 80,
+                                  width:80,child: Image.asset("${controller.cart[index].image}")),
+
+                              Expanded(
+                                flex: 5,
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 5),
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Text(
+                                        "${controller.cart[index].nameEn}",style: TextStyle(fontSize: 15,overflow: TextOverflow.ellipsis),),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "Price : ",style: TextStyle(
+                                            fontSize: 12,
+                                          ),
+                                          ),
+                                          Text(
+                                            "${controller.cart[index].regPrice} ৳",style: TextStyle(
+                                            fontSize: 12,
+                                          ),
+
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: [
+                                          // Obx(()=> Text(
+                                          //   "${cartController.productQty.value * salePrice} ৳",style: TextStyle(
+                                          //   fontSize: 16,
+                                          //   color: Colors.red,
+                                          // ),
+                                          //
+                                          // ),),
+                                          const Spacer(),
+                                          InkWell(
+                                            onTap: () async {
+                                              controller.cart.removeAt(index);
+                                            },
+                                            child: const Icon(Icons.delete_forever, color: Colors.red),
+                                          ),
+                                          const SizedBox(width: 10)
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
+                )
               ),
             )
           ],
