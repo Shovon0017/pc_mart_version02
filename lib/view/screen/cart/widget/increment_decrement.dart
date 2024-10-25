@@ -19,7 +19,7 @@ class IncrementDecrementButton extends StatelessWidget {
         color: Colors.white,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 1, vertical: 2),
-          child: Icon(iconData, color: Colors.deepOrange),
+          child: Icon(iconData, color:Color(0xff9a0000)),
         ),
       ),
     );
