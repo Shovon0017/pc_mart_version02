@@ -3,12 +3,12 @@ class ProductList {
     "products": [
       {
         "id": "1",
+        "Images": "images/Intel_Core_i9_13900K_header_5.png",
         "name": "Intel Core i9-13900K",
         "category": "Processor",
         "brand": "Intel",
         "price": 599.99,
         "stock": 15,
-        "quantity": 1,
         "specifications": {
           "cores": 24,
           "threads": 32,
@@ -19,12 +19,12 @@ class ProductList {
       },
       {
         "id": "2",
+        "Images": "images/geforce-rtx-4090-gaming-oc-24g-01-500x500.webp",
         "name": "NVIDIA GeForce RTX 4090",
         "category": "Graphics Card",
         "brand": "NVIDIA",
         "price": 1599.99,
         "stock": 8,
-        "quantity": 2,
         "specifications": {
           "memory": "24 GB GDDR6X",
           "cores": 16384,
@@ -34,12 +34,12 @@ class ProductList {
       },
       {
         "id": "3",
+        "Images": "images/Corsair Vengeance LPX 16GB (2 x 8GB) DDR4.webp",
         "name": "Corsair Vengeance LPX 16GB (2 x 8GB) DDR4",
         "category": "Memory",
         "brand": "Corsair",
         "price": 79.99,
         "stock": 20,
-        "quantity": 3,
         "specifications": {
           "capacity": "16 GB",
           "type": "DDR4",
@@ -49,12 +49,12 @@ class ProductList {
       },
       {
         "id": "4",
+        "Images": "images/970-evo-plus-1tb-500x500.jpg",
         "name": "Samsung 970 EVO Plus 1TB NVMe SSD",
         "category": "Storage",
         "brand": "Samsung",
         "price": 129.99,
         "stock": 25,
-        "quantity": 4,
         "specifications": {
           "capacity": "1 TB",
           "type": "NVMe",
@@ -64,12 +64,12 @@ class ProductList {
       },
       {
         "id": "5",
+        "Images": "images/asus-rog-strix-z790-e-motherboard-02.jpg",
         "name": "ASUS ROG Strix Z790-E Gaming WiFi",
         "category": "Motherboard",
         "brand": "ASUS",
         "price": 349.99,
         "stock": 12,
-        "quantity": 5,
         "specifications": {
           "socket": "LGA 1700",
           "chipset": "Intel Z790",
@@ -80,12 +80,12 @@ class ProductList {
       },
       {
         "id": "6",
+        "Images": "images/Cooler Master Hyper 212 EVO.jpg",
         "name": "Cooler Master Hyper 212 EVO",
         "category": "Cooling",
         "brand": "Cooler Master",
         "price": 34.99,
         "stock": 30,
-        "quantity": 6,
         "specifications": {
           "type": "Air Cooler",
           "fan_size": "120 mm",
@@ -95,12 +95,12 @@ class ProductList {
       },
       {
         "id": "7",
+        "Images": "images/NZXT H510 Elite.webp",
         "name": "NZXT H510 Elite",
         "category": "Case",
         "brand": "NZXT",
         "price": 149.99,
         "stock": 10,
-        "quantity": 7,
         "specifications": {
           "form_factor": "ATX",
           "dimensions": "210 x 460 x 428 mm",
@@ -110,12 +110,12 @@ class ProductList {
       },
       {
         "id": "8",
+        "Images": "images/Logitech-G-PRO-X-1-1-500x500.jpg.webp",
         "name": "Logitech G Pro X Wireless",
         "category": "Peripherals",
         "brand": "Logitech",
         "price": 129.99,
         "stock": 18,
-        "quantity": 8,
         "specifications": {
           "type": "Wireless Gaming Mouse",
           "sensor": "Hero 25K",
@@ -127,12 +127,12 @@ class ProductList {
       {
         "id": "9",
         "name": "NVIDIA GeForce RTX 4080",
+        "Images": "images/NVIDIA GeForce RTX 4080.webp",
         "category": "Graphics Card",
         "brand": "NVIDIA",
         "price": 1199.99,
         "stock": 18,
-        "quantity": 9,
-        "specifications": {
+        "specs": {
           "memory": "16GB GDDR6X",
           "coreClock": "2505 MHz",
           "interface": "PCIe 4.0"
@@ -141,14 +141,14 @@ class ProductList {
       {
         "id": "10",
         "name": "AMD Ryzen 9 7950X",
+        "Images": "images/AMD Ryzen 9 7950X.webp",
         "category": "Processor",
         "brand": "AMD",
         "price": 699.99,
         "stock": 18,
-        "quantity": 10,
-        "specifications": {
-          "cores": 16,
-          "threads": 32,
+        "specs": {
+          "cores": "16",
+          "threads": "32",
           "baseClock": "4.2 GHz",
           "boostClock": "5.7 GHz"
         }
@@ -156,26 +156,22 @@ class ProductList {
       {
         "id": "11",
         "name": "Corsair Vengeance LPX 32GB",
+        "Images": "images/Corsair Vengeance LPX 32GB.jpg",
         "category": "Memory",
         "brand": "Corsair",
         "price": 139.99,
         "stock": 18,
-        "quantity": 11,
-        "specifications": {
-          "type": "DDR4",
-          "speed": "3200 MHz",
-          "casLatency": "16"
-        }
+        "specs": {"type": "DDR4", "speed": "3200 MHz", "casLatency": "16"}
       },
       {
         "id": "12",
         "name": "Samsung 980 PRO 1TB",
+        "Images": "images/Samsung 980 PRO 1TB.jpg",
         "category": "Storage",
         "brand": "Samsung",
         "price": 159.99,
         "stock": 18,
-        "quantity": 12,
-        "specifications": {
+        "specs": {
           "type": "NVMe M.2",
           "readSpeed": "7000 MB/s",
           "writeSpeed": "5000 MB/s"
@@ -184,12 +180,12 @@ class ProductList {
       {
         "id": "13",
         "name": "ASUS ROG Crosshair VIII Hero",
+        "Images": "images/ASUS ROG Crosshair VIII Hero.jpg",
         "category": "Motherboard",
         "brand": "ASUS",
         "price": 349.99,
         "stock": 18,
-        "quantity": 13,
-        "specifications": {
+        "specs": {
           "socket": "AM4",
           "chipset": "AMD X570",
           "memorySupport": "DDR4 4400 MHz"
@@ -198,12 +194,12 @@ class ProductList {
       {
         "id": "14",
         "name": "Noctua NH-U12S",
+        "Images": "images/Noctua NH-U12S.jpg",
         "category": "Cooler",
         "brand": "Noctua",
         "price": 69.95,
         "stock": 18,
-        "quantity": 14,
-        "specifications": {
+        "specs": {
           "type": "Air Cooler",
           "fanSize": "120mm",
           "compatibleSockets": ["Intel LGA115x", "AMD AM4"]
@@ -212,12 +208,12 @@ class ProductList {
       {
         "id": "15",
         "name": "Fractal Design Meshify C",
+        "Images": "images/Fractal Design Meshify C.jpg",
         "category": "Case",
         "brand": "Fractal Design",
         "price": 99.99,
         "stock": 18,
-        "quantity": 15,
-        "specifications": {
+        "specs": {
           "formFactor": "Mid Tower",
           "color": "Black",
           "frontFans": "2 x 120mm"
@@ -226,12 +222,12 @@ class ProductList {
       {
         "id": "16",
         "name": "EVGA SuperNOVA 850 G5",
+        "Images": "images/EVGA SuperNOVA 850 G5.png",
         "category": "Power Supply",
         "brand": "EVGA",
         "price": 149.99,
         "stock": 18,
-        "quantity": 16,
-        "specifications": {
+        "specs": {
           "wattage": "850W",
           "efficiencyRating": "80+ Gold",
           "modular": "Fully Modular"
@@ -240,6 +236,7 @@ class ProductList {
       {
         "id": "17",
         "name": "Dell UltraSharp U2720Q",
+        "Images": "images/Dell UltraSharp U2720Q.jpg",
         "category": "Monitor",
         "brand": "Dell",
         "price": 549.99,
@@ -247,8 +244,7 @@ class ProductList {
         "resolution": "3840 x 2160",
         "refreshRate": "60 Hz",
         "stock": 20,
-        "quantity": 17,
-        "specifications": {
+        "specs": {
           "panelType": "IPS",
           "brightness": "400 cd/m²",
           "contrastRatio": "1300:1"
@@ -257,6 +253,7 @@ class ProductList {
       {
         "id": "18",
         "name": "LG 34GN850-B",
+        "Images": "images/LG 34GN850-B.jpg",
         "category": "Monitor",
         "brand": "LG",
         "price": 799.99,
@@ -264,8 +261,7 @@ class ProductList {
         "resolution": "3440 x 1440",
         "refreshRate": "144 Hz",
         "stock": 20,
-        "quantity": 18,
-        "specifications": {
+        "specs": {
           "panelType": "Nano IPS",
           "brightness": "400 cd/m²",
           "contrastRatio": "1000:1"
@@ -274,6 +270,7 @@ class ProductList {
       {
         "id": "19",
         "name": "ASUS ROG Swift PG259QN",
+        "Images": "images/ASUS ROG Swift PG259QN.jpg",
         "category": "Monitor",
         "brand": "ASUS",
         "price": 1399.99,
@@ -281,8 +278,7 @@ class ProductList {
         "resolution": "3840 x 2160",
         "refreshRate": "360 Hz",
         "stock": 20,
-        "quantity": 19,
-        "specifications": {
+        "specs": {
           "panelType": "IPS",
           "brightness": "400 cd/m²",
           "contrastRatio": "1000:1"
@@ -291,6 +287,7 @@ class ProductList {
       {
         "id": "20",
         "name": "Acer Predator X27",
+        "Images": "images/Acer Predator X27.webp",
         "category": "Monitor",
         "brand": "Acer",
         "price": 1699.99,
@@ -298,8 +295,7 @@ class ProductList {
         "resolution": "3840 x 2160",
         "refreshRate": "144 Hz",
         "stock": 20,
-        "quantity": 20,
-        "specifications": {
+        "specs": {
           "panelType": "IPS",
           "brightness": "600 cd/m²",
           "contrastRatio": "1000:1"
@@ -308,6 +304,7 @@ class ProductList {
       {
         "id": "21",
         "name": "BenQ EW3270U",
+        "Images": "images/BenQ EW3270U.jpg",
         "category": "Monitor",
         "brand": "BenQ",
         "price": 449.99,
@@ -315,11 +312,10 @@ class ProductList {
         "resolution": "3840 x 2160",
         "refreshRate": "60 Hz",
         "stock": 20,
-        "quantity": 21,
-        "specifications": {
-          "panelType": "IPS",
-          "brightness": "600 cd/m²",
-          "contrastRatio": "1000:1"
+        "specs": {
+          "panelType": "VA",
+          "brightness": "300 cd/m²",
+          "contrastRatio": "3000:1"
         }
       },
       {
@@ -333,14 +329,12 @@ class ProductList {
         "resolution": "2560 x 1440",
         "refreshRate": "240 Hz",
         "stock": 20,
-        "quantity": 22,
-        "specifications": {
-          "panelType": "IPS",
+        "specs": {
+          "panelType": "VA",
           "brightness": "600 cd/m²",
-          "contrastRatio": "1000:1"
+          "contrastRatio": "2500:1"
         }
       }
     ]
-  }
-  ;
+  };
 }
