@@ -127,11 +127,29 @@ class _OrderTrackState extends State<OrderTrack> {
                   children: [
                     Row(
                       children: [
-                        Text("data",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        Text("Oct-31",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
                         SizedBox(width: 20,),
                         CircleAvatar(radius: 10,backgroundColor: Color(0xff9a0000),),
                         SizedBox(width: 10,),
-                        Text("datasfdrfsdsdfsdfs",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
+                        Text(maxLines: 2,"Shipment Ready To Handover",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,overflow:TextOverflow.fade))
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Oct-27",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        SizedBox(width: 20,),
+                        CircleAvatar(radius: 10,backgroundColor: Color(0xff9a0000),),
+                        SizedBox(width: 10,),
+                        Text("Ready To Take Off",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        Text("Oct-26",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        SizedBox(width: 20,),
+                        CircleAvatar(radius: 10,backgroundColor: Color(0xff9a0000),),
+                        SizedBox(width: 10,),
+                        Text("Dropped off",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
                       ],
                     )
                   ],

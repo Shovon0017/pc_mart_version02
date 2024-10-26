@@ -126,11 +126,11 @@ class _ProfileState extends State<Profile> {
                   onTap: () {
                     Get.to(() => const Order());
                   }),
-              CommonButton(
-                  buttonName: "Confirm Order",
-                  onTap: () {
-                    Get.to(() => const ConfirmOrder());
-                  }),
+              // CommonButton(
+              //     buttonName: "Confirm Order",
+              //     onTap: () {
+              //       Get.to(() => const ConfirmOrder());
+              //     }),
               CommonButton(
                   buttonName: "Order Report",
                   onTap: () {
