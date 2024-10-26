@@ -117,7 +117,25 @@ class _OrderTrackState extends State<OrderTrack> {
                 ),
               ),
             ),
+            SizedBox(
 
+              width: double.infinity,
+              child:
+              Card(
+                color: CupertinoColors.systemGrey4,
+                child: Column(mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Row(
+                      children: [
+                        Text("data"),
+                        CircleAvatar(radius: 25),
+
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
