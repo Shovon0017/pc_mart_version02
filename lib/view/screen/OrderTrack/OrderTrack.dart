@@ -127,9 +127,11 @@ class _OrderTrackState extends State<OrderTrack> {
                   children: [
                     Row(
                       children: [
-                        Text("data"),
-                        CircleAvatar(radius: 25),
-
+                        Text("data",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                        SizedBox(width: 20,),
+                        CircleAvatar(radius: 10,backgroundColor: Color(0xff9a0000),),
+                        SizedBox(width: 10,),
+                        Text("datasfdrfsdsdfsdfs",style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold))
                       ],
                     )
                   ],
